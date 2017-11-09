@@ -1,0 +1,20 @@
+title: Member
+
+files:
+  type: image
+  max: 1
+  fields:
+    caption:
+      label: Caption
+      type: textarea
+
+pages: false
+
+fields:
+  title:
+    label: Title
+    type:  text
+
+  text:
+    label: Text
+    type:  textarea

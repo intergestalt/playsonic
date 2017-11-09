@@ -1,0 +1,15 @@
+title: Team
+
+files: false
+
+pages:
+  template: Member
+
+fields:
+  title:
+    label: Title
+    type:  text
+
+  text:
+    label: Text
+    type:  textarea

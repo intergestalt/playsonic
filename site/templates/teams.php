@@ -10,8 +10,10 @@
       <hr />
     </header>
       
-    <div class="wrap wide">    
-      <?php snippet('showcase') ?>
+    <div class="wrap wide">
+
+      <?php snippet('teams-list') ?>
+
     </div>
 
   </main>
