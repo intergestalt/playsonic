@@ -31,7 +31,7 @@
                 <a href="<?= $article->url() ?>"><?= $article->title()->html() ?></a>
               </h2>
 
-              <?php snippet('article_date', $article) ?>
+              <?php snippet('article-date', $article) ?>
             </header>
 
             <?php snippet('coverimage', $article) ?>
