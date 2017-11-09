@@ -7,12 +7,13 @@
       <header class="article-header">
         <h1><?= $page->title()->html() ?></h1>
         <div class="intro text">
-          <?php snippet('article_date', $page) ?>
+          <?php snippet('article-date', $page) ?>
         </div>
         <hr />
       </header>
       
       <?php snippet('coverimage', $page) ?>
+      <?php snippet('article-attachments-list', $page) ?>
       
       <div class="text">
         <?= $page->text()->kirbytext() ?>
