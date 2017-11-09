@@ -15,7 +15,7 @@ for more information: http://getkirby.com/license
 
 */
 
-c::set('license', trim(file_get_contents('../kirbylicence.dat')) );
+c::set('license', file_exists('../kirbylicence.dat') ? trim(file_get_contents('../kirbylicence.dat')) : '' );
 
 /*
 
