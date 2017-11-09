@@ -1,4 +1,6 @@
-<h3 class="member-title"><?= $member->title()->html() ?></h3>
+<h3 class="member-title"><?= $member->title()->html() ?>
+<?php if (!$member->role()->empty()) { echo ' ('.$member->role()->html().')'; } ?>
+</h3>
 
 <?php echo $member->text()->kirbytext() ?>
 
