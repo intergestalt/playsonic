@@ -46,3 +46,6 @@ c::set('languages', array(
     'default' => true,
   ),
 ));
+
+c::set('debug', true);
+c::set('date.handler', 'strftime'); 
