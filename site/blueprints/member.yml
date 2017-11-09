@@ -18,3 +18,7 @@ fields:
   text:
     label: Text
     type:  textarea
+
+  link:
+    label: link
+    type: url
