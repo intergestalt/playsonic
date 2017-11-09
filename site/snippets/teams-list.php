@@ -1,6 +1,5 @@
 <?php $teams = page('teams')->children()->visible(); ?>
 
-List of teams:
 <ul class="teams-list">
 
 <?php foreach($teams as $team): ?>

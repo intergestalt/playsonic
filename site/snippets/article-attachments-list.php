@@ -1,7 +1,5 @@
 <?php $attachments = $item->children()->visible(); ?>
 
-List of attachments:
-
 <ul class="attachments-list">
 
   <?php foreach($attachments as $attachment): ?>
