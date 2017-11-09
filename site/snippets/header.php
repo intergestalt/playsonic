@@ -12,6 +12,9 @@
   <?= css('assets/plugins/embed/css/embed.css') ?>
 
 </head>
+
+<?php snippet('scss') ?>
+
 <body>
 
   <header>
