@@ -1,7 +1,5 @@
 <?php $members = $team->children()->visible(); ?>
 
-List of members:
-
 <ul class="members-list">
 
   <?php foreach($members as $member): ?>
