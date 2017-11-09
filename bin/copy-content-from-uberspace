@@ -13,4 +13,8 @@ echo "----------------------"
 cat uberspace.config
 echo "----------------------"
 
-scp -r $uberspace_username@$uberspace_host:~/html/content content
+echo "deleting local content directory"
+rm -rf ./content
+
+echo "replacing with remote version"
+scp -r $uberspace_username@$uberspace_host:~/html/content ./
