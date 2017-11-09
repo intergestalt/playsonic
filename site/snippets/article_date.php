@@ -1,0 +1,1 @@
+<p class="article-date"><?= $item->date('%A, %d %b %Y %H:%M') ?></p>
