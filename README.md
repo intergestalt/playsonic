@@ -11,5 +11,7 @@ git submodule update --init --recursive
 php -S localhost:3000
 ````
 ## deploy
-
-git push 
+````
+git remote add live ssh://psonic@achernar.uberspace.de/home/psonic/playsonic.git
+git push live
+````
