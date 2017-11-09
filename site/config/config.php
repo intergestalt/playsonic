@@ -47,5 +47,8 @@ c::set('languages', array(
   ),
 ));
 
-c::set('debug', true);
 c::set('date.handler', 'strftime'); 
+
+/* DEV: */
+c::set('debug', true);
+c::set('scssNestedCheck', true);

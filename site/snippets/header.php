@@ -11,6 +11,9 @@
   <?= css('assets/css/index.css') ?>
 
 </head>
+
+<?php snippet('scss') ?>
+
 <body>
 
   <header>
