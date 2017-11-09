@@ -1,0 +1,14 @@
+_path=`pwd`
+tmp_path="/home/psonic/tmp"
+site_path="/home/psonic/html"
+git clone ./ $tmp_path/website
+
+echo "copying site/ ..."
+rsync -ai --checksum --delete --exclude cache --exclude accounts $tmp_path/website/site $site_path/
+
+echo "copying assets/ ..."
+rsync -ai --checksum --delete $tmp_path/website/assets $site_path/
+
+echo "cleaning up ..."
+rm -rf $tmp_path/website
+echo "(!) updated site and assets folders. update submodules and content manually"
