@@ -14,4 +14,4 @@ php -S localhost:3000
 ````
 git remote add live ssh://psonic@achernar.uberspace.de/home/psonic/playsonic.git
 git push live
-````
+```
