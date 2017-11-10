@@ -24,3 +24,5 @@
   <div id="pjax-container">
 
     <?php snippet('menu') ?>
+
+    <main id="main" class="main" role="main">
