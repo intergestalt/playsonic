@@ -3,12 +3,10 @@
 		margin-top:0;
 	}
 
-
-
-
-
 	.member-image {
-		margin-top: 20px;
+		position: relative;
+		//left: -$default_space;
+		margin-top: $default_space;
 		width: 66%;
 		height: 66%;
 		margin-left: auto;
@@ -21,7 +19,6 @@
 	 	-webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
     	filter: grayscale(0%);	
 	}
-
 
 	ul.members-list {
 		list-style: none;

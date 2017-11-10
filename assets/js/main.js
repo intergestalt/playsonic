@@ -4,14 +4,19 @@ $(document).on('pjax:complete ready', function() {
   
 	$('html').click(function(e){
 		if(menuOpen && !$(e.target).parent().hasClass("active")) {
-			$(".menu-container").hide();		
-    		menuOpen = false;
+  			$(".menu-container").hide();
+        $(".menu-container").hide();
+        $(".menu-icon").removeClass("active");		
+        $(".main-icon").show();
+      	menuOpen = false;
     	}
   	});
 
 	$(".menu-icon").click(function(e) {
-		e.stopPropagation();
-		$(".menu-container").show();	
+		  e.stopPropagation();
+		  $(".menu-container").show();
+      $(".menu-icon").addClass("active");	
+      $(".main-icon").hide();
   		menuOpen = true;
   	});
 

@@ -1,7 +1,6 @@
 /* menu */ 
 
-$default_space: 3vw;
-$icon_dimension: 10.5vw;
+@import '_variables.scss';
 
 #menu {
 	height: 120px;
@@ -12,9 +11,42 @@ $icon_dimension: 10.5vw;
 .main-icon, .menu-icon {
 	width: $icon_dimension;
 	height: $icon_dimension;
-	background-color: #eee;
 	position: absolute;
 	top: $default_space;
+}
+
+.main-icon svg, .menu-icon svg {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+}
+
+.menu-icon {
+	z-index: 2;
+	span {
+		color: #000;
+	}
+	.menu_closed {
+		display: none;
+	}
+	.menu_open {
+		display: block;
+	}	
+}
+
+.menu-icon.active {
+	span {
+		color: #fff;
+	}
+	.menu_closed {
+		display: block;
+		fill: #fff;
+	}
+	.menu_open {
+		display: none;
+	}
 }
 
 .main-icon:hover, .menu-icon:hover {
@@ -72,7 +104,7 @@ ul.main-menu > li {
 }
 
 .menu-container li.active span, .menu-container li.active span {
-	font-weight: bold;
+	//font-family: 'psbold';
 	color: #aaa;
 }
 
@@ -88,7 +120,7 @@ ul.team-menu {
 ul.team-menu li {
 	display: inline;
 	color: #fff;
-	padding-left: 6px;
+	padding-left: 3px;
 }
 
 ul.team-menu li::before { 
