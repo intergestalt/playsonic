@@ -13,6 +13,7 @@
 	height: $icon_dimension;
 	position: absolute;
 	top: $default_space;
+	-webkit-user-select: none;
 	user-select: none;
 }
 
