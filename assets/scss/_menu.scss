@@ -13,6 +13,7 @@
 	height: $icon_dimension;
 	position: absolute;
 	top: $default_space;
+	user-select: none;
 }
 
 .main-icon svg, .menu-icon svg {
