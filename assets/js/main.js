@@ -78,16 +78,30 @@ $(function(){
 function repeatPatterns() {
 	var containers = $('.pattern-repeat');
 	$(containers).each(function(i,container){
+
+
+		var page_height = $('#pjax-container').outerHeight() + $('#pjax-container').offset().top //$('body').outerHeight()
 		var elem = $(container).find('svg').get(0)
+
+		var bg = $('#background');
+		$(bg).height(page_height+50);
+		
+		repeatElem(elem, 5)
+
+		/* 
+
+		// try to find out, how many times it needs to repeat. problem: reported svg height is wrong
+
 		var factor = parseFloat($(container).attr('data-scroll-speed'))
-		var elem_height = $(elem).height()
-		var page_height = $('body').outerHeight()
-		console.log("elem:"+elem_height, "page:"+page_height)
+		var elem_height = $(elem).outerHeight(true)
+
+
+		console.log(elem.clientHeight, elem.clientWidth, "elem:"+elem_height, "page:"+page_height)
 		if ((elem_height+20) < page_height) {
 			var times = Math.ceil( 1.5*page_height / elem_height) - 1;
 			console.log(times)
-			repeatElem(elem, times)			
-		} 
+			repeatElem(elem, times)
+		} */
 	})
 }
 
@@ -101,6 +115,10 @@ function repeatElem(elem, times) {
 
 
 // Initialization
-$(function(){
+$(window).on('load resize',function(){
+  repeatPatterns();
+});
+
+$(document).on('pjax:complete',function(){
   repeatPatterns();
 });
