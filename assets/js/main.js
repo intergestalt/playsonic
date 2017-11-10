@@ -46,8 +46,13 @@ assembleBackgroundPattern = function() {
   let index = 0;
   let interval = setInterval(function() {
     if(index < elements.length) {
-      $(elements[index]).css("opacity", 1);
-      index++;  
+      console.log("fading in element " + index);
+      $(elements[index]).css("opacity", 1)
+      var el = $(elements[index]);
+      el.one("transitionend", function() {
+        el.addClass("appeared");
+      });
+      index++;
     } else {
       clearInterval(interval);
     }

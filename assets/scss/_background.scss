@@ -24,7 +24,9 @@
 		transition: all 2s linear;
 		&:not(:hover) {
 			fill: #000;	
-			transition: all 2s 4s linear;
+		}
+		&.appeared:not(:hover) {
+			transition: all 2s 20s linear;
 		}
 	}
 
