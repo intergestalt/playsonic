@@ -1,5 +1,13 @@
-<?php /* static: not replaced on navigation */ ?>
+<?php 
+
+/* static content - not replaced by pjax */ 
+
+function get_svg($name) {
+	return file_get_contents('site/snippets/svg/'.$name.'.svg');
+}
+
+?>
 
 <div id="background">
-background-svg, random: <?= rand(100,999) ?>
+	<?= get_svg('pattern') ?>
 </div>
