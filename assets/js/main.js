@@ -1,6 +1,6 @@
 menuOpen = false;
 
-$(function() {
+$(document).on('pjax:complete ready', function() {
   
 	$('html').click(function(e){
 		if(menuOpen && !$(e.target).parent().hasClass("active")) {
@@ -20,6 +20,7 @@ $(function() {
 
 
 $(window).load(function(){
-	console.log("init pjax")
-	$(document).pjax('a', '#pjax-container')	
+	$(document).pjax('a', '#pjax-container',{
+		fragment: '#pjax-container'
+	})	
 })
