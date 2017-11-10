@@ -3,12 +3,10 @@
 		margin-top:0;
 	}
 
-
-
-
-
 	.member-image {
-		margin-top: 20px;
+		position: relative;
+		left: -$default_space;
+		margin-top: $default_space;
 		width: 66%;
 		height: 66%;
 		margin-left: auto;
