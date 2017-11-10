@@ -7,6 +7,12 @@ nav {
 	height: 120px;
 }
 
+#menu {
+	position: absolute;
+	width:100%;
+	box-sizing: border-box;
+}
+
 .main-icon, .menu-icon {
 	width: $icon_dimension;
 	height: $icon_dimension;

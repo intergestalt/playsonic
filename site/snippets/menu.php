@@ -1,4 +1,4 @@
-<nav>
+<nav id="menu">
 
   <a href="/<?= $site->language()?>"><div class="main-icon"></div></a>
   <div class="menu-icon"><span><?= l::get('menu') ?></span></div>
