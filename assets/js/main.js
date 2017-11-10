@@ -27,6 +27,8 @@ $(window).load(function(){
 
 /* ------ move speed effect ------------- */
 
+var breakpoint = 500;
+
 $.fn.moveIt = function(){
   var $window = $(window);
   var instances = [];
@@ -64,4 +66,36 @@ moveItItem.prototype.update = function(scrollTop){
 // Initialization
 $(function(){
   $('[data-scroll-speed]').moveIt();
+});
+
+/* --------------- repeat pattern -------------- */
+
+function repeatPatterns() {
+	var containers = $('.pattern-repeat');
+	$(containers).each(function(i,container){
+		var elem = $(container).find('svg').get(0)
+		var factor = parseFloat($(container).attr('data-scroll-speed'))
+		var elem_height = $(elem).height()
+		var page_height = $('body').outerHeight()
+		console.log("elem:"+elem_height, "page:"+page_height)
+		if ((elem_height+20) < page_height) {
+			var times = Math.ceil( 1.5*page_height / elem_height) - 1;
+			console.log(times)
+			repeatElem(elem, times)			
+		} 
+	})
+}
+
+
+
+function repeatElem(elem, times) {
+	for (var i=0; i< times; i++){
+		$(elem).after($(elem).clone())
+	}
+}
+
+
+// Initialization
+$(function(){
+  repeatPatterns();
 });

@@ -15,4 +15,11 @@
 		height: auto;
 		display: block;
 	}
+
+	.pattern svg + svg path {
+		&:nth-child(5),
+		&:nth-child(10) {
+			display: none; /* Nasenoperation */
+		}
+	}
 }
