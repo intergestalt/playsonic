@@ -1,6 +1,6 @@
 <?php snippet('header') ?>
 
-  <?php echo "Background:".$page->team()?>
+  <?php //echo "Background:".$page->team()?>
 
   <h1 class="showcase-title">/ <?= $page->team() ?></h1>
 

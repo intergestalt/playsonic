@@ -5,7 +5,7 @@
 
 	.member-image {
 		position: relative;
-		left: -$default_space;
+		//left: -$default_space;
 		margin-top: $default_space;
 		width: 66%;
 		height: 66%;
@@ -19,7 +19,6 @@
 	 	-webkit-filter: grayscale(0%); /* Safari 6.0 - 9.0 */
     	filter: grayscale(0%);	
 	}
-
 
 	ul.members-list {
 		list-style: none;

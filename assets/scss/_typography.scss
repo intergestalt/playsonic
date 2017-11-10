@@ -8,6 +8,8 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: 'ps';
 	font-size: 33px;
 	line-height: 36px;
+	font-weight: normal;
+	letter-spacing: 0.08em;
 }
 
 h2 {
@@ -20,4 +22,10 @@ h3 {
 	font-size: 22px;
 	line-height: 30px;
 	margin: 0px;
+}
+
+nav li {
+	letter-spacing: 0.08em;
+	font-size: 20px;
+	line-height: 28px;
 }

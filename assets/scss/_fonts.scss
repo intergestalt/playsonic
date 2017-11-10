@@ -4,7 +4,14 @@
          url('/assets/fonts/ps-light-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+}
 
+@font-face {
+    font-family: 'psbold';
+    src: url('/assets/fonts/ps-bold-webfont.woff') format('woff'),
+         url('/assets/fonts/ps-bold-webfont.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
 }
 
 @font-face {

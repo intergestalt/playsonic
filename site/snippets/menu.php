@@ -1,7 +1,11 @@
 <nav id="menu">
 
-  <a href="/<?= $site->language()?>"><div class="main-icon"></div></a>
-  <div class="menu-icon"><span><?= l::get('menu') ?></span></div>
+  <a href="/<?= $site->language()?>"><div class="main-icon"><?= get_svg('logo') ?></div></a>
+  <div class="menu-icon"> 
+    <div class="menu_open"><?= get_svg('menu_open') ?></div>
+    <div class="menu_closed"><?= get_svg('menu_closed') ?></div>
+    <span><?= l::get('menu') ?></span>
+  </div>
 
   <div class="menu-container">
     
