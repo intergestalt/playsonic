@@ -1,3 +1,8 @@
+#main {
+	padding: 0 35%;	
+	padding-top: 17vw;
+}
+
 #background {
 	position: absolute;
 	top:0;
@@ -8,10 +13,6 @@
 	svg {
 		width: 100%;
 		height: auto;
+		display: block;
 	}
-}
-
-#main {
-	padding: 0 33.333%;	
-	padding-top: 10vw;
 }

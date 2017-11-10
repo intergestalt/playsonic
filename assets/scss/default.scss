@@ -8,3 +8,8 @@
 @import '_menu';
 @import '_main';
 @import '_background';
+
+:root {
+	background-image: url('/assets/images/raster.png');
+	background-size: 100%;
+}
