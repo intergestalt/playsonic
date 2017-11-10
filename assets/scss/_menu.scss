@@ -21,10 +21,10 @@
 	position: absolute;
 	top: 0px;
 	left: 0px;
+	z-index: -2;
 }
 
 .menu-icon {
-	z-index: 2;
 	span {
 		color: #000;
 	}
@@ -39,12 +39,17 @@
 .menu-icon.active {
 	span {
 		color: #fff;
+		position: relative;
+		z-index: 2;
 	}
 	.menu_closed {
 		display: none;
 	}
 	.menu_open {
 		display: block;
+		svg {
+			z-index: 2;
+		}
 		svg path {
 			fill: #fff !important;
 		}

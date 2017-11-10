@@ -1,23 +1,32 @@
 menuOpen = false;
 
+closeMenu = function() {
+  $(".menu-container").hide();
+  $(".menu-container").hide();
+  $(".menu-icon").removeClass("active");    
+  $(".main-icon").show();
+  menuOpen = false;
+}
+
 $(document).on('pjax:complete ready', function() {
   
 	$('html').click(function(e){
 		if(menuOpen && !$(e.target).parent().hasClass("active")) {
-  			$(".menu-container").hide();
-        $(".menu-container").hide();
-        $(".menu-icon").removeClass("active");		
-        $(".main-icon").show();
-      	menuOpen = false;
+  		  closeMenu();	
     	}
   	});
 
 	$(".menu-icon").click(function(e) {
 		  e.stopPropagation();
-		  $(".menu-container").show();
-      $(".menu-icon").addClass("active");	
-      $(".main-icon").hide();
-  		menuOpen = true;
+      if(!menuOpen) {
+        $(".menu-container").show();
+        $(".menu-icon").addClass("active"); 
+        $(".main-icon").hide();
+        menuOpen = true;
+      } else {
+        closeMenu();
+      }
+		  
   	});
 
 
