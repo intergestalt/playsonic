@@ -1,7 +1,7 @@
 <nav>
 
   <a href="/<?= $site->language()?>"><div class="main-icon"></div></a>
-  <div class="menu-icon"></div>
+  <div class="menu-icon"><span><?= l::get('menu') ?></span></div>
 
   <div class="menu-container">
     
@@ -13,10 +13,8 @@
           <?php else : ?>
             <span><?= $item->title()->html() ?></span>
           <?php endif ?>
-        </li>
-        <?php if($item->id() == "teams") : ?>
-          <li>
-            <ul>
+          <?php if($item->id() == "teams") : ?>
+            <ul class="team-menu">
             <?php foreach($item->children() as $team): ?>
               <?php if(!$team->isOpen()) : ?>
                 <li>
@@ -29,8 +27,8 @@
               <?php endif ?>
             <?php endforeach ?>
             </ul>
+          <?php endif ?>
           </li>
-        <?php endif ?>
       <?php endforeach ?>
     </ul>
     
