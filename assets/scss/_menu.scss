@@ -1,15 +1,18 @@
 /* menu */ 
 
+$default_space: 3vw;
+$icon_dimension: 10.5vw;
+
 nav {
-	height: 75px;
+	height: 120px;
 }
 
 .main-icon, .menu-icon {
-	width: 50px;
-	height: 50px;
-	background-color: green;
+	width: $icon_dimension;
+	height: $icon_dimension;
+	background-color: #eee;
 	position: absolute;
-	top: 5px;
+	top: $default_space;
 }
 
 .main-icon:hover, .menu-icon:hover {
@@ -17,11 +20,21 @@ nav {
 }
 
 .main-icon {
-	left: 5px;	
+	left: $default_space;
 }
 
 .menu-icon {
-	right: 5px;
+	right: $default_space;
+}
+
+.menu-icon span {
+	font-family: ps;
+	text-transform: uppercase;
+	font-size: 2.5vw;
+	text-align: center;
+	width: 100%;
+	display: block;
+	line-height: $icon_dimension;
 }
 
 .menu-container {
@@ -30,8 +43,16 @@ nav {
 	top: 0px;
 	left: 0px;
 	width: 100%;
-	background-color:rgba(0, 0, 0, 0.5);
-	padding-bottom: 16px;
+	background-color:rgba(0, 0, 0, 0.8);
+}
+
+ul.main-menu, ul.language-select {
+	width: 100%;
+	padding-left: 18.7%;
+}
+
+ul.main-menu > li {
+	clear: both;
 }
 
 .menu-container ul {
@@ -48,6 +69,7 @@ nav {
 }
 
 .menu-container li.active span, .menu-container li.active span {
+	font-weight: bold;
 	color: #aaa;
 }
 
@@ -55,7 +77,26 @@ nav {
 	cursor: default;
 }
 
+ul.team-menu {
+	display: inline;
+	padding-left: 0px;
+}
+
+ul.team-menu li {
+	display: inline;
+	color: #fff;
+	padding-left: 6px;
+}
+
+ul.team-menu li::before { 
+    content: "/";
+}
+
+ul.team-menu li a, ul.team-menu li span {
+	text-transform: lowercase;
+}
+
 .language-select li {
-	float: left;
+	display: inline;
 	margin-right: 10px;
 }
