@@ -19,7 +19,7 @@
 
 	svg path {
 		opacity: 0;
-		transition: all 2s;
+		transition: all 2s linear;
 	}
 
 	.pattern svg + svg path {
