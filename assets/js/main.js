@@ -51,7 +51,7 @@ assembleBackgroundPattern = function() {
     } else {
       clearInterval(interval);
     }
-  }, 500); 
+  }, 100); 
 
 }
 
@@ -65,6 +65,11 @@ $.fn.moveIt = function(){
   
   $(this).each(function(){
     instances.push(new moveItItem($(this)));
+    this.style.willChange='transform';
+  });
+
+  instances.forEach(function(inst){
+    
   });
   
   $(window).on('scroll resize', function(){
@@ -101,22 +106,34 @@ $(function(){
 /* --------------- repeat pattern -------------- */
 
 function repeatPatterns() {
-	var containers = $('.pattern-repeat');
-	$(containers).each(function(i,container){
-		var elem = $(container).find('svg').get(0)
-		var factor = parseFloat($(container).attr('data-scroll-speed'))
-		var elem_height = $(elem).height()
-		var page_height = $('body').outerHeight()
-		console.log("elem:"+elem_height, "page:"+page_height)
-		if ((elem_height+20) < page_height) {
-			var times = Math.ceil( 1.5*page_height / elem_height) - 1;
-			console.log(times)
-			repeatElem(elem, times)			
-		} 
-	})
+    var containers = $('.pattern-repeat');
+    $(containers).each(function(i,container){
+
+
+        var page_height = $('#pjax-container').outerHeight() + $('#pjax-container').offset().top //$('body').outerHeight()
+        var elem = $(container).find('svg').get(0)
+
+        var bg = $('#background');
+        $(bg).height(page_height+50);
+        
+        repeatElem(elem, 10)
+
+        /* 
+
+        // try to find out, how many times it needs to repeat. problem: reported svg height is wrong
+
+        var factor = parseFloat($(container).attr('data-scroll-speed'))
+        var elem_height = $(elem).outerHeight(true)
+
+
+        console.log(elem.clientHeight, elem.clientWidth, "elem:"+elem_height, "page:"+page_height)
+        if ((elem_height+20) < page_height) {
+            var times = Math.ceil( 1.5*page_height / elem_height) - 1;
+            console.log(times)
+            repeatElem(elem, times)
+        } */
+    })
 }
-
-
 
 function repeatElem(elem, times) {
 	for (var i=0; i< times; i++){
@@ -125,10 +142,14 @@ function repeatElem(elem, times) {
 }
 
 // Initialization
-$(function(){
-  repeatPatterns();
+$(window).on('load resize',function(){
+    setTimeout(
+ repeatPatterns,100);
 });
 
+$(document).on('pjax:complete',function(){
+ repeatPatterns();
+});
 
 
 /* ------- main init ------ */
@@ -141,7 +162,7 @@ $(window).load(function(){
 
 // only on first load
 $(function() {
-  assembleBackgroundPattern();
+  setTimeout(assembleBackgroundPattern, 200);
 });
 
 $(document).on('pjax:complete ready', function() {

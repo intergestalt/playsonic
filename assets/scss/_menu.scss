@@ -38,6 +38,8 @@
 }
 
 .menu-icon.active {
+	position: fixed;
+	z-index:10;
 	span {
 		color: #fff;
 		position: relative;
