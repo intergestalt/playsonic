@@ -8,15 +8,15 @@
   <title><?= $site->title()->html() ?> | <?= $page->title()->html() ?></title>
   <meta name="description" content="<?= $site->description()->html() ?>">
 
-  <?= css('assets/css/index.css') ?>
+  <?php snippet('scss') ?>  
   <?= css('assets/plugins/embed/css/embed.css') ?>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <?= js('assets/js/main.js') ?>
 
 </head>
 
-<?php snippet('scss') ?>
-
 <body>
 
-  <header>
-      <?php snippet('menu') ?>
-  </header>
+  <?php snippet('menu') ?>
+  
