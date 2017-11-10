@@ -2,8 +2,7 @@
 
   <main class="main" role="main">
 
-    <header class="wrap">
-      <h1><?= $page->title()->html() ?></h1>
+    <h1><?= $page->title()->html() ?></h1>
 
       <?php
       // This page uses a separate controller to set variables, which can be used
@@ -16,9 +15,6 @@
           <?= $page->text()->kirbytext() ?>
         </div>
       <?php endif ?>
-
-      <hr />
-    </header>
 
     <section class="wrap">
       <?php if($articles->count()): ?>
@@ -49,7 +45,7 @@
 
         <?php endforeach ?>
       <?php else: ?>
-        <p>This blog does not contain any articles yet.</p>
+        <p><?php echo l::get('blog_empty') ?></p>
       <?php endif ?>
     </section>
 

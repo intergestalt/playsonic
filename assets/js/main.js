@@ -51,7 +51,7 @@ assembleBackgroundPattern = function() {
     } else {
       clearInterval(interval);
     }
-  }, 200); 
+  }, 100); 
 
 }
 
@@ -194,7 +194,7 @@ $(window).load(function(){
 
 // only on first load
 $(function() {
-  setTimeout(assembleBackgroundPattern, 1000);
+  setTimeout(assembleBackgroundPattern, 500);
 });
 
 $(document).on('pjax:complete ready', function() {
