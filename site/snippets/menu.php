@@ -6,7 +6,7 @@
     <div class="menu_closed"><?= get_svg('menu_closed') ?></div>
     <span><?= l::get('menu') ?></span>
   </div>
-
+  
   <div class="menu-container">
     
     <ul class="main-menu">
