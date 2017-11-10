@@ -13,3 +13,5 @@
   <?php endforeach ?>
 
 </ul>
+
+<p><a href="<?= page('teams')->url() ?>"><?= l::get('back_to_all_teams') ?></a></p>
