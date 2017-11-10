@@ -8,11 +8,11 @@
   <title><?= $site->title()->html() ?> | <?= $page->title()->html() ?></title>
   <meta name="description" content="<?= $site->description()->html() ?>">
 
-  <?php snippet('scss') ?>  
-  <?= css('assets/plugins/embed/css/embed.css') ?>
-
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   <?= js('assets/js/main.js') ?>
+
+  <?= css('assets/plugins/embed/css/embed.css') ?>
+  <?php snippet('scss') ?>  
 
 </head>
 

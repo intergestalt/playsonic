@@ -10,6 +10,15 @@ fields:
     label: Title
     type:  text
 
+  team:
+    label: Team
+    type: select
+    options:
+      public: Public
+      chamber: Chamber
+      ensemble: Ensemble
+      solo: Solo      
+
   text:
     label: Text
     type:  textarea
