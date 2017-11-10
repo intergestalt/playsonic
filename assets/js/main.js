@@ -17,3 +17,9 @@ $(function() {
 
 
 });
+
+
+$(window).load(function(){
+	console.log("init pjax")
+	$(document).pjax('a', '#pjax-container')	
+})
