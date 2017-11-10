@@ -1,0 +1,61 @@
+/* menu */ 
+
+nav {
+	height: 75px;
+}
+
+.main-icon, .menu-icon {
+	width: 50px;
+	height: 50px;
+	background-color: green;
+	position: absolute;
+	top: 5px;
+}
+
+.main-icon:hover, .menu-icon:hover {
+	cursor: pointer;
+}
+
+.main-icon {
+	left: 5px;	
+}
+
+.menu-icon {
+	right: 5px;
+}
+
+.menu-container {
+	display: none;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	background-color:rgba(0, 0, 0, 0.5);
+	padding-bottom: 16px;
+}
+
+.menu-container ul {
+	list-style: none;
+}
+
+.menu-container li a, .menu-container li span {
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.menu-container li a {
+	color: #fff;
+}
+
+.menu-container li.active span, .menu-container li.active span {
+	color: #aaa;
+}
+
+.menu-container li.active span:hover {
+	cursor: default;
+}
+
+.language-select li {
+	float: left;
+	margin-right: 10px;
+}

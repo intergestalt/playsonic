@@ -14,9 +14,14 @@
   <?= css('assets/plugins/embed/css/embed.css') ?>
   <?php snippet('scss') ?>  
 
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
+
 </head>
 
 <body>
 
-  <?php snippet('menu') ?>
-  
+  <div id="pjax-container">
+
+    <?php snippet('menu') ?>

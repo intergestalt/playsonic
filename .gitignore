@@ -18,6 +18,8 @@ Icon
 /site/cache/*
 !/site/cache/index.html
 
+/assets/css
+
 # -------------SECURITY-------------
 # NEVER publish these files via Git!
 # -------------SECURITY-------------
