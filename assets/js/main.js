@@ -1,6 +1,6 @@
+/* ------- menu functions ------- */
+
 menuOpen = false;
-
-
 
 closeMenu = function() {
   $(".menu-container").hide();
@@ -10,35 +10,50 @@ closeMenu = function() {
   menuOpen = false;
 }
 
-$(document).on('pjax:complete ready', function() {
-  
-	$('html').click(function(e){
-		if(menuOpen && !$(e.target).parent().hasClass("active")) {
-  		  closeMenu();	
-    	}
-  	});
+openMenu = function() {
+  $(".menu-container").show();
+  $(".menu-icon").addClass("active"); 
+  $(".main-icon").hide();
+  menuOpen = true;  
+}
 
-	$(".menu-icon").click(function(e) {
-		  e.stopPropagation();
-      if(!menuOpen) {
-        $(".menu-container").show();
-        $(".menu-icon").addClass("active"); 
-        $(".main-icon").hide();
-        menuOpen = true;
-      } else {
-        closeMenu();
-      }
-		  
-  	});
+/* ------ background transitions --------- */
 
-});
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
 
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
 
-$(window).load(function(){
-	$(document).pjax('a', '#pjax-container',{
-		fragment: '#pjax-container'
-	})	
-})
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
+assembleBackgroundPattern = function() {
+
+  let elements = $("#background svg path").toArray();
+  elements = shuffle(elements);
+
+  let index = 0;
+  let interval = setInterval(function() {
+    if(index < elements.length) {
+      $(elements[index]).css("opacity", 1);
+      index++;  
+    } else {
+      clearInterval(interval);
+    }
+  }, 500); 
+
+}
 
 /* ------ move speed effect ------------- */
 
@@ -109,8 +124,42 @@ function repeatElem(elem, times) {
 	}
 }
 
-
 // Initialization
 $(function(){
   repeatPatterns();
 });
+
+
+
+/* ------- main init ------ */
+
+$(window).load(function(){
+  $(document).pjax('a', '#pjax-container',{
+    fragment: '#pjax-container'
+  })  
+})
+
+// only on first load
+$(function() {
+  assembleBackgroundPattern();
+});
+
+$(document).on('pjax:complete ready', function() {
+
+  $('html').click(function(e){
+    if(menuOpen && !$(e.target).parent().hasClass("active")) {
+        closeMenu();  
+      }
+    });
+
+  $(".menu-icon").click(function(e) {
+      e.stopPropagation();
+      if(!menuOpen) {
+        openMenu();
+      } else {
+        closeMenu();
+      }
+    });
+
+});
+

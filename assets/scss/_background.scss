@@ -17,6 +17,11 @@
 		display: block;
 	}
 
+	svg path {
+		opacity: 0;
+		transition: all 2s;
+	}
+
 	.pattern svg + svg path {
 		&:nth-child(5),
 		&:nth-child(10) {
