@@ -3,5 +3,5 @@
 l::set('blog_read_more', 'weiterlesen');
 l::set('blog_empty', 'Hier sind noch keine Blog-Einträge vorhanden.');
 l::set('menu', 'menü');
-l::set('back_to_all_teams', 'zurück zur übersicht');
+l::set('back_to_all_teams', 'zurück zu allen teams');
 
