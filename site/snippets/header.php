@@ -8,12 +8,11 @@
   <title><?= $site->title()->html() ?> | <?= $page->title()->html() ?></title>
   <meta name="description" content="<?= $site->description()->html() ?>">
 
-  <?= css('assets/css/index.css') ?>
   <?= css('assets/plugins/embed/css/embed.css') ?>
 
-</head>
+  <?php snippet('scss') ?>
 
-<?php snippet('scss') ?>
+</head>
 
 <body>
 
