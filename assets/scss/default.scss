@@ -1,2 +1,7 @@
+/* this is the main scss entry file - it is compiled to assets/css/default.css and replaces that file at runtime */
+
+@charset "UTF-8";
+
 @import '_fonts';
 @import '_typography';
+@import '_menu';
