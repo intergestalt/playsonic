@@ -12,10 +12,16 @@
 
   <?php snippet('scss') ?>
 
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.pjax/2.0.1/jquery.pjax.min.js">
+
 </head>
 
 <body>
 
-  <header>
-      <?php snippet('menu') ?>
-  </header>
+  <div id="pjax-container">
+
+	<header>
+	    <?php snippet('menu') ?>
+	</header>

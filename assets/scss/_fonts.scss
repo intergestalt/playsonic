@@ -1,7 +1,7 @@
 @font-face {
     font-family: 'ps';
-    src: url('ps-light-webfont.woff2') format('woff2'),
-         url('ps-light-webfont.woff') format('woff');
+    src: url('/assets/fonts/ps-light-webfont.woff2') format('woff2'),
+         url('/assets/fonts/ps-light-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 
@@ -15,5 +15,3 @@
     font-style: normal;
 
 }
-
-* { font-family: pstext }
