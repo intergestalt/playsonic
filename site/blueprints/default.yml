@@ -5,6 +5,10 @@ fields:
     label: Title
     type:  text
 
+  headline:
+    label: Headline
+    type: text
+
   text:
     label: Text
     type:  textarea
