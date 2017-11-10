@@ -114,9 +114,9 @@ function repeatPatterns() {
         var elem = $(container).find('svg').get(0)
 
         var bg = $('#background');
-        $(bg).height(page_height+50);
+        $(bg).height(page_height+50); // add some gap
         
-        repeatElem(elem, 10)
+        repeatElem(elem, 10) // repeat 10 times
 
         /* 
 
@@ -135,22 +135,54 @@ function repeatPatterns() {
     })
 }
 
+function adjustBackgroundHeight() {
+    var containers = $('.pattern-repeat');
+    $(containers).each(function(i,container){
+
+        var page_height = $('#pjax-container').outerHeight() + $('#pjax-container').offset().top //$('body').outerHeight()
+        var elem = $(container).find('svg').get(0)
+
+        var bg = $('#background');
+        $(bg).height(page_height+50);
+        
+    })
+}
+
 function repeatElem(elem, times) {
 	for (var i=0; i< times; i++){
 		$(elem).after($(elem).clone())
 	}
 }
 
+function initAdjustOnImgLoad(){
+	$('img:not(.watched)').each(function(i,img){
+
+		$(img).on('load',function(){
+		 adjustBackgroundHeight();
+		}).addClass("watched");    
+
+	})
+
+
+}
+
 // Initialization
-$(window).on('load resize',function(){
-    setTimeout(
- repeatPatterns,100);
+$(window).on('load',function(){
+    setTimeout(function(){
+    	repeatPatterns();
+    	adjustBackgroundHeight();
+    },100);
+    initAdjustOnImgLoad();
 });
 
-$(document).on('pjax:complete',function(){
- repeatPatterns();
+$(window).on('resize',function(){
+    setTimeout(adjustBackgroundHeight,100);
 });
 
+$(document).on('pjax:end',function(){
+ adjustBackgroundHeight();
+ initAdjustOnImgLoad();
+});
 
 /* ------- main init ------ */
 
