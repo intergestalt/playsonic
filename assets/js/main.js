@@ -49,6 +49,11 @@ $.fn.moveIt = function(){
   
   $(this).each(function(){
     instances.push(new moveItItem($(this)));
+    this.style.willChange='transform';
+  });
+
+  instances.forEach(function(inst){
+    
   });
   
   $(window).on('scroll resize', function(){
@@ -95,7 +100,7 @@ function repeatPatterns() {
 		var bg = $('#background');
 		$(bg).height(page_height+50);
 		
-		repeatElem(elem, 5)
+		repeatElem(elem, 10)
 
 		/* 
 
@@ -125,7 +130,8 @@ function repeatElem(elem, times) {
 
 // Initialization
 $(window).on('load resize',function(){
-  repeatPatterns();
+	setTimeout(
+  repeatPatterns,100);
 });
 
 $(document).on('pjax:complete',function(){
