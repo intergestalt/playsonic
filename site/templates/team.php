@@ -2,7 +2,7 @@
 
   <?php echo "Background:".$page->team()?>
 
-  <h3 class="showcase-title"><?= $page->title()->html() ?></h3>
+  <h1 class="showcase-title">/ <?= $page->team() ?></h1>
 
   <?php echo $page->text()->kirbytext() ?>
 
