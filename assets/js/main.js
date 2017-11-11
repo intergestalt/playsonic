@@ -56,7 +56,7 @@ assembleBackgroundPattern = function() {
     } else {
       clearInterval(interval);
     }
-  }, 100); 
+  }, 120); 
 
 }
 

@@ -26,14 +26,19 @@
 			fill: #000;	
 		}
 		&.appeared:not(:hover) {
-			transition: all 2s 20s linear;
+			transition: all 8s 24s linear;
 		}
 	}
 
-	.pattern svg + svg path {
-		&:nth-child(5),
-		&:nth-child(10) {
-			display: none; /* Nasenoperation */
+	.pattern-start {
+		svg + svg path { 
+			&:nth-child(7),
+			&:nth-child(8) {
+				display: none; /* Nasenoperation */
+			}
 		}
+		margin-top: -13vw; 
 	}
+
+
 }
