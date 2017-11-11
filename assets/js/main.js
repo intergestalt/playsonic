@@ -40,13 +40,13 @@ function shuffle(array) {
 
 assembleBackgroundPattern = function() {
 
-  let elements = $("#background svg path").toArray();
+  let elements = $("#background .pattern-start svg path").toArray();
   elements = shuffle(elements);
 
   let index = 0;
   let interval = setInterval(function() {
     if(index < elements.length) {
-      console.log("fading in element " + index);
+      // console.log("fading in element " + index);
       $(elements[index]).css("opacity", 1)
       var el = $(elements[index]);
       el.one("transitionend", function() {
@@ -59,6 +59,15 @@ assembleBackgroundPattern = function() {
   }, 120); 
 
 }
+
+/* ------- swap backgrounds ------ */
+
+$(document).on('ready pjax:end',function(){
+  var bg = $(":root").attr('data-bg') || 'start'
+  $('.pattern').removeClass('active-pattern')
+  $('.pattern-'+bg).addClass('active-pattern')
+});
+
 
 /* ------ move speed effect ------------- */
 

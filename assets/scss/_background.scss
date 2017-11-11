@@ -18,7 +18,13 @@
 		display: block;
 	}
 
-	svg path {
+	.pattern {
+		margin-top: -13vw; 
+	}
+
+	/* transition for animated paths */
+
+	.pattern-start svg path {
 		pointer-events: all;
 		opacity: 0;
 		transition: all 2s linear;
@@ -30,15 +36,108 @@
 		}
 	}
 
+	/* transition for non-animated paths */
+
+	.pattern:not(.pattern-start) svg path {
+		pointer-events: all;
+		transition: all 2s linear;
+		&:hover {
+			fill: #000;	
+		}
+		&:not(:hover) {
+			transition: all 8s 24s linear;
+		}
+	}
+
+}
+
+/* transition between backgrounds */
+
+#background {
+	.pattern {
+		transition: opacity 2s 0.1s;
+		opacity: 1;
+		position: absolute;
+		top:0;
+
+		&:not(.active-pattern) {
+			opacity: 0;
+			svg path {
+				pointer-events: none;
+			}
+		}
+	}
+}
+
+
+/* Nasenoperation */
+
+#background { 
 	.pattern-start {
 		svg + svg path { 
 			&:nth-child(7),
 			&:nth-child(8) {
-				display: none; /* Nasenoperation */
+				display: none; 
 			}
 		}
-		margin-top: -13vw; 
 	}
 
+	.pattern-public {
+		svg + svg path { 
+			&:nth-child(31),
+			&:nth-child(32) {
+				display: none;
+			}
+		}
+	}	
 
+
+	.pattern-chamber {
+		svg + svg path { 
+			&:nth-child(19),
+			&:nth-child(20) {
+				display: none;
+			}
+		}
+	}
+
+	.pattern-ensemble {
+		svg + svg path { 
+			&:nth-child(19),
+			&:nth-child(20) {
+				display: none;
+			}
+		}
+	}
+
+	.pattern-solo {
+		svg + svg path { 
+			&:nth-child(10),
+			&:nth-child(11) {
+				display: none;
+			}
+		}
+	}
+
+	// Helper: uncomment to see the number of the path in stroke-width
+	/*
+	.pattern {
+		&:not(.active-pattern) {
+			display: none;
+		}
+		path {
+			pointer-events: all;
+		}
+		svg path {
+			@for $i from 1 through 50 {
+			    &:nth-child(#{$i}) {
+			    	stroke: red;
+			        stroke-width:#{$i};
+			        position:absolute;
+			        color: red;
+			    }
+			}
+		}
+	}
+	*/
 }

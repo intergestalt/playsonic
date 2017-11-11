@@ -1,0 +1,18 @@
+.teams-menu {
+	list-style-type: none;
+
+	&, li {
+		padding:0;
+		margin:0;
+	}
+
+	li {
+		width:50%;
+		float: left;
+	}
+
+	svg {
+		width:100%;
+		height: auto;
+	}
+}

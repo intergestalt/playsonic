@@ -23,6 +23,11 @@
 
   <div id="pjax-container">
 
+    <script>
+      document.documentElement.setAttribute('data-page','<?= $site->activePage()->id() ?>');
+      document.documentElement.setAttribute('data-bg','<?= $site->activePage()->team() ?>');
+    </script>
+
     <?php snippet('menu') ?>
 
     <main id="main" class="main" role="main">
