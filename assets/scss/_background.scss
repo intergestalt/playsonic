@@ -1,5 +1,7 @@
 #main {
-	padding: 0 35%;	
+	width: 33%;
+	margin-left: auto;
+	margin-right: auto;
 	padding-top: 18.2vw;
 }
 
@@ -52,6 +54,7 @@
 	.pattern {
 		margin-top: -13vw; 
 		position: absolute;
+		width: 100%;
 		top:0;
 		opacity: 1;
 		&:not(.active-pattern) {
