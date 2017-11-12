@@ -19,7 +19,7 @@ openMenu = function() {
 
 /* ------ background transitions --------- */
 
-function shuffle(array) {
+shuffle = function(array) {
   var currentIndex = array.length, temporaryValue, randomIndex;
 
   // While there remain elements to shuffle...
@@ -34,40 +34,73 @@ function shuffle(array) {
     array[currentIndex] = array[randomIndex];
     array[randomIndex] = temporaryValue;
   }
-
   return array;
 }
 
-assembleBackgroundPattern = function() {
-
-  let elements = $("#background .pattern-start svg path").toArray();
+// performns an action on all elements in array at speed interval 
+performInRandomOrder = function(elements, speed, action, callback=null) {
   elements = shuffle(elements);
-
   let index = 0;
   let interval = setInterval(function() {
     if(index < elements.length) {
-      // console.log("fading in element " + index);
-      $(elements[index]).css("opacity", 1)
-      var el = $(elements[index]);
-      el.one("transitionend", function() {
-        el.addClass("appeared");
-      });
+      action($(elements[index]));
       index++;
     } else {
       clearInterval(interval);
+      if(callback) {
+        callback();
+      }
     }
-  }, 120); 
-
+  }, speed); 
 }
 
-/* ------- swap backgrounds ------ */
+assembleBackgroundPattern = function(interval=10, callback=null) {
+  let elements = $("#background .active-pattern svg path").toArray();
+  performInRandomOrder(elements, interval, function(el) {
+    el.css("opacity", 1)
+  }, callback);  
+}
 
-$(document).on('ready pjax:end',function(){
+swapBackground = function(firstLoad=false, callback=null) {
   var bg = $(":root").attr('data-bg') || 'start'
-  $('.pattern').removeClass('active-pattern')
-  $('.pattern-'+bg).addClass('active-pattern')
+  
+  if(firstLoad) {
+    $('.pattern-'+bg).addClass('active-pattern');
+    let elements = $("#background .active-pattern svg path").css("opacity", 1);
+  } else {
+    // perform dissassembly
+    let elements = $("#background .active-pattern svg path").toArray();
+    performInRandomOrder(elements, 0, function(el) {
+      el.css("opacity", 0); 
+    }, function() {
+      console.log("background disassembly done");
+      // hide old pattern
+      $('.pattern').removeClass('active-pattern')
+      // show new pattern
+      $('.pattern-'+bg).addClass('active-pattern')  
+      assembleBackgroundPattern(0, callback);
+    });
+  }
+}
+
+// init on first load
+$(function() {
+  swapBackground(true);
 });
 
+// fires on every page oad via pjax
+$(document).on('pjax:complete', function() {  
+  
+  // todo: check if background needs to be swapped
+
+  // uncomment these to show new content only after transition
+  /*console.log("hiding main content");
+  $("#main").css("opacity", 0);*/
+  swapBackground(false, function() {
+    /*console.log("revealing main content");
+    $("#main").css("opacity", 1);*/
+  });
+});
 
 /* ------ move speed effect ------------- */
 
@@ -176,8 +209,6 @@ function initAdjustOnImgLoad(){
 		}).addClass("watched");    
 
 	})
-
-
 }
 
 // Initialization
@@ -198,18 +229,13 @@ $(document).on('pjax:end',function(){
  initAdjustOnImgLoad();
 });
 
-/* ------- main init ------ */
+/* ------- pjax init ------ */
 
 $(window).load(function(){
   $(document).pjax('a', '#pjax-container',{
     fragment: '#pjax-container'
   })  
 })
-
-// only on first load
-$(function() {
-  setTimeout(assembleBackgroundPattern, 500);
-});
 
 $(document).on('pjax:complete ready', function() {
 

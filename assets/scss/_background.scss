@@ -16,59 +16,54 @@
 		width: 100%;
 		height: auto;
 		display: block;
-	}
-
-	.pattern {
-		margin-top: -13vw; 
+		path {
+			opacity: 0; // all patterns start with 0 opacity before assembly
+		}
 	}
 
 	/* transition for animated paths */
 
 	.pattern-start svg path {
 		pointer-events: all;
-		opacity: 0;
-		transition: all 2s linear;
+		transition: fill 0.5s linear;
 		&:not(:hover) {
 			fill: #000;	
 		}
-		&.appeared:not(:hover) {
-			transition: all 8s 24s linear;
+		&:not(:hover) { // after move away of mouseover
+			transition: fill 30s linear, opacity 0.25s linear;
 		}
 	}
 
 	/* transition for non-animated paths */
 
-	.pattern:not(.pattern-start) svg path {
+	.pattern-team svg path {
 		pointer-events: all;
-		transition: all 2s linear;
+		transition: fill 0.5s linear;
 		&:hover {
 			fill: #000;	
 		}
 		&:not(:hover) {
-			transition: all 8s 24s linear;
+			transition: fill 30s linear, opacity 0.25s linear;
 		}
 	}
 
-}
-
-/* transition between backgrounds */
-
-#background {
+	/* basic pattern visibililty, positioning, events */
+	
 	.pattern {
-		transition: opacity 2s 0.1s;
-		opacity: 1;
+		margin-top: -13vw; 
 		position: absolute;
 		top:0;
-
+		opacity: 1;
 		&:not(.active-pattern) {
+			display: none; // turning off pointer events doesn't seem to work - display none makes sure no events get received
 			opacity: 0;
 			svg path {
 				pointer-events: none;
 			}
 		}
 	}
-}
 
+}
 
 /* Nasenoperation */
 
@@ -82,7 +77,7 @@
 		}
 	}
 
-	.pattern-public {
+	.pattern-ensemble {
 		svg + svg path { 
 			&:nth-child(31),
 			&:nth-child(32) {
@@ -92,7 +87,7 @@
 	}	
 
 
-	.pattern-chamber {
+	.pattern-public {
 		svg + svg path { 
 			&:nth-child(19),
 			&:nth-child(20) {
@@ -101,7 +96,7 @@
 		}
 	}
 
-	.pattern-ensemble {
+	.pattern-chamber {
 		svg + svg path { 
 			&:nth-child(19),
 			&:nth-child(20) {
