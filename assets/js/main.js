@@ -68,10 +68,10 @@ swapBackground = function(firstLoad=false, callback=null) {
     setTimeout(function() {
       $('.pattern-'+bg).addClass('active-pattern');
       let elements = $("#background .active-pattern svg path");
-      elements.css("opacity", 1);
-      /*performInRandomOrder(elements, 100, function(el) {
+      //elements.css("opacity", 1);
+      performInRandomOrder(elements, 0, function(el) {
         el.css("opacity", 1); 
-      });*/
+      });
     }, 300);
   } else {
     // perform dissassembly
