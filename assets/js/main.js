@@ -65,8 +65,14 @@ swapBackground = function(firstLoad=false, callback=null) {
   var bg = $(":root").attr('data-bg') || 'start'
   
   if(firstLoad) {
-    $('.pattern-'+bg).addClass('active-pattern');
-    let elements = $("#background .active-pattern svg path").css("opacity", 1);
+    setTimeout(function() {
+      $('.pattern-'+bg).addClass('active-pattern');
+      let elements = $("#background .active-pattern svg path");
+      elements.css("opacity", 1);
+      /*performInRandomOrder(elements, 100, function(el) {
+        el.css("opacity", 1); 
+      });*/
+    }, 300);
   } else {
     // perform dissassembly
     let elements = $("#background .active-pattern svg path").toArray();
