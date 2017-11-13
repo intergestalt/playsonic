@@ -2,6 +2,10 @@
 	font-family: 'pstext', sans-serif;
 	font-size: 22px;
 	line-height: 30px;
+	@media screen and (max-width: $breakpoint) {
+		font-size: 21px;
+		line-height: 24px;
+	}
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -11,6 +15,10 @@ h1, h2, h3, h4, h5, h6 {
 	font-weight: normal;
 	letter-spacing: 0.08em;
 	text-transform: uppercase;
+	@media screen and (max-width: $breakpoint) {
+		font-size: 25px;
+		line-height: 30px;
+	}	
 }
 
 h1.showcase-title {
@@ -18,14 +26,18 @@ h1.showcase-title {
 }
 
 h2 {
-	margin-top: 10px;
-	margin-bottom: 10px;
+	margin-top: 1em;
+	margin-bottom: 1em;
 }
 
 h3 {
 	font-family: 'pstext', sans-serif;
 	font-size: 22px;
 	line-height: 30px;
+	@media screen and (max-width: $breakpoint) {
+		font-size: 21px;
+		line-height: 24px;
+	}	
 	margin: 0px;
 }
 

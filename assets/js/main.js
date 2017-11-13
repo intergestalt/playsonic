@@ -38,10 +38,11 @@ shuffle = function(array) {
 }
 
 // performns an action on all elements in array at speed interval 
-performInRandomOrder = function(elements, speed, action, callback=null) {
+performInRandomOrder = function(elements, speed, action, callback) {
+  if (callback === void 0) callback = null;
   elements = shuffle(elements);
-  let index = 0;
-  let interval = setInterval(function() {
+  var index = 0;
+  var interval = setInterval(function() {
     if(index < elements.length) {
       action($(elements[index]));
       index++;
@@ -54,20 +55,24 @@ performInRandomOrder = function(elements, speed, action, callback=null) {
   }, speed); 
 }
 
-assembleBackgroundPattern = function(interval=10, callback=null) {
-  let elements = $("#background .active-pattern svg path").toArray();
+assembleBackgroundPattern = function(interval, callback) {
+  if (interval === void 0) interval = 10;
+  if (callback === void 0) callback = null;
+  var elements = $("#background .active-pattern svg path").toArray();
   performInRandomOrder(elements, interval, function(el) {
     el.css("opacity", 1)
   }, callback);  
 }
 
-swapBackground = function(firstLoad=false, callback=null) {
+swapBackground = function(firstLoad, callback) {
+  if (firstLoad === void 0) firstLoad = true;
+  if (callback === void 0) callback = null;
   var bg = $(":root").attr('data-bg') || 'start'
   
   if(firstLoad) {
     setTimeout(function() {
       $('.pattern-'+bg).addClass('active-pattern');
-      let elements = $("#background .active-pattern svg path");
+      var elements = $("#background .active-pattern svg path");
       //elements.css("opacity", 1);
       performInRandomOrder(elements, 0, function(el) {
         el.css("opacity", 1); 
@@ -75,7 +80,7 @@ swapBackground = function(firstLoad=false, callback=null) {
     }, 300);
   } else {
     // perform dissassembly
-    let elements = $("#background .active-pattern svg path").toArray();
+    var elements = $("#background .active-pattern svg path").toArray();
     performInRandomOrder(elements, 0, function(el) {
       el.css("opacity", 0); 
     }, function() {
@@ -251,7 +256,7 @@ $(document).on('pjax:complete ready', function() {
       }
     });
 
-  $(".menu-icon").click(function(e) {
+  $(".menu-icon").on('click tap', function(e) {
       e.stopPropagation();
       if(!menuOpen) {
         openMenu();
