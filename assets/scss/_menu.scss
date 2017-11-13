@@ -129,7 +129,7 @@ ul.main-menu > li {
 ul.team-menu {
 	display: inline;
 	padding-left: 0px;
-	@media screen and (max-width: $breakpoint) {
+	@media screen and (max-width: $breakpoint_menu) {
 		display: block;
 		margin-left: 1em;
 	}
@@ -139,7 +139,7 @@ ul.team-menu li {
 	display: inline;
 	color: #fff;
 	padding-left: 3px;
-	@media screen and (max-width: $breakpoint) {
+	@media screen and (max-width: $breakpoint_menu) {
 		display: block;
 	}	
 }
