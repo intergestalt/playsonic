@@ -64,11 +64,16 @@ assembleBackgroundPattern = function(interval, callback) {
   }, callback);  
 }
 
+var bg;
+
 swapBackground = function(firstLoad, callback) {
   if (firstLoad === void 0) firstLoad = true;
   if (callback === void 0) callback = null;
-  var bg = $(":root").attr('data-bg') || 'start'
-  
+
+  var new_bg = $(":root").attr('data-bg') || 'start'
+  if (new_bg === bg) { return }
+  else { bg = new_bg }
+
   if(firstLoad) {
     setTimeout(function() {
       $('.pattern-'+bg).addClass('active-pattern');
