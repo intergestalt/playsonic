@@ -37,4 +37,18 @@
 		padding-left: 0px;
 	}
 
+	.partner-logo-container {
+		width: 200%;
+		position: relative;
+		left: -50%;
+		background-color: #fff;
+		z-index: 5;
+		height: 150px;
+	}
+
+	.partner-logo-container img {
+		max-height: 100%;
+		max-width: 100%;
+	}
+
 }

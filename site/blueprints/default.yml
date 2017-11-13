@@ -13,4 +13,8 @@ fields:
     label: Text
     type:  textarea
 
+  logos:
+    label: logos
+    type: textarea
+
 
