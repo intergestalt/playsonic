@@ -272,3 +272,10 @@ $(document).on('pjax:complete ready', function() {
 
 });
 
+/* ----- resize image maps ---- */
+
+$(document).ready(function() {
+  $('img[usemap]').imageMap();
+});
+
+

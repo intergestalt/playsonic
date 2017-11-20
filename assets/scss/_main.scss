@@ -52,7 +52,6 @@
 		//left: -50%;
 		background-color: #fff;
 		z-index: 5;
-		height: 150px;
 
 	}
 
@@ -61,8 +60,17 @@
 	}
 
 	.partner-logo-container img {
-		max-height: 100%;
-		max-width: 100%;
+		width: 100%;
 	}
 
+	.legal {
+		margin-top: 1.5em;
+		font-size: 75%;
+	}
+
+	.legal a {
+		padding-right: 4px;
+	}
+
+	
 }
