@@ -17,7 +17,7 @@ fields:
       public: Public
       chamber: Chamber
       ensemble: Ensemble
-      solo: Solo      
+      speaker: Speaker      
 
   text:
     label: Text
