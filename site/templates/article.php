@@ -5,11 +5,8 @@
     <article class="article single wrap">
 
       <header class="article-header">
-        <h1><?= $page->title()->html() ?></h1>
-        <div class="intro text">
-          <?php snippet('article-date', $page) ?>
-        </div>
-        <hr />
+        <h2><?= $page->title()->html() ?></h2>
+        <?php snippet('article-meta', $page) ?>
       </header>
       
       <?php snippet('coverimage', $page) ?>

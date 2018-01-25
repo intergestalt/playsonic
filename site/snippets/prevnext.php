@@ -22,22 +22,18 @@ if($page->hasNextVisible() || $page->hasPrevVisible()): ?>
 
     <?php if($page->hasPrevVisible()): ?>
       <a class="pagination-item <?= $directionPrev ?>" href="<?= $page->prevVisible()->url() ?>" rel="prev" title="<?= $page->prevVisible()->title()->html() ?>">
-        <?= (new Asset("assets/images/arrow-{$directionPrev}.svg"))->content() ?>
+        <?php echo l::get('prev_entry') ?>
       </a>
     <?php else: ?>
-      <span class="pagination-item <?= $directionPrev ?> is-inactive">
-        <?= (new Asset("assets/images/arrow-{$directionPrev}.svg"))->content() ?>
-      </span>
+
     <?php endif ?>
 
     <?php if($page->hasNextVisible()): ?>
       <a class="pagination-item <?= $directionNext ?>" href="<?= $page->nextVisible()->url() ?>" rel="next" title="<?= $page->nextVisible()->title()->html() ?>">
-        <?= (new Asset("assets/images/arrow-{$directionNext}.svg"))->content() ?>
+        <?php echo l::get('next_entry') ?>
       </a>
     <?php else: ?>
-      <span class="pagination-item <?= $directionNext ?> is-inactive">
-        <?= (new Asset("assets/images/arrow-{$directionNext}.svg"))->content() ?>
-      </span>
+      
     <?php endif ?>
 
   </nav>

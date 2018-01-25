@@ -27,21 +27,20 @@
                 <a href="<?= $article->url() ?>"><?= $article->title()->html() ?></a>
               </h2>
 
-              <?php snippet('article-date', $article) ?>
+              
+              <?php snippet('article-meta', $article) ?>
             </header>
 
             <?php snippet('coverimage', $article) ?>
 
             <div class="text">
               <p>
-                <?= $article->text()->kirbytext()->excerpt(50, 'words') ?>
+                <?= $article->text()->kirbytext()->excerpt(30, 'words') ?>
                 <a href="<?= $article->url() ?>" class="article-more"><?php echo l::get('blog_read_more') ?></a>
               </p>
             </div>
 
           </article>
-
-          <hr />
 
         <?php endforeach ?>
       <?php else: ?>

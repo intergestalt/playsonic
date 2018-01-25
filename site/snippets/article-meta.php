@@ -1,0 +1,1 @@
+<p class="article-meta"><?= $item->date('%A, %d %b %Y') ?>, <?= $item->author() ?></p>
