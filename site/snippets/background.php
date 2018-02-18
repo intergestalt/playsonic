@@ -11,7 +11,7 @@
 	<div class="pattern pattern-team pattern-ensemble pattern-repeat" data-scroll-speed="1.5">
 		<?= get_svg('pattern-ensemble') ?>
 	</div>	
-	<div class="pattern pattern-team pattern-solo pattern-repeat" data-scroll-speed="1.5">
-		<?= get_svg('pattern-solo') ?>
+	<div class="pattern pattern-team pattern-speaker pattern-repeat" data-scroll-speed="1.5">
+		<?= get_svg('pattern-speaker') ?>
 	</div>		
 </div>
