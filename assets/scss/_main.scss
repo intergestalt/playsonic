@@ -109,5 +109,32 @@
 		text-decoration: none;
 	}
 
+	ul.event-list {
+		list-style: none;
+		padding-left: 0px;
+	}
+
+	ul.event-list li {
+		margin-bottom: 1em;
+	}
+
+	ul.event-list p {
+		margin-top: 0.5em;
+		margin-bottom: 0.5em;
+	}
+
+	p.event-times, p.event-artist {
+		line-height: 1.3em;
+		font-size: 0.75em;
+		margin-top: 0.5em;
+	}
+
+	p.event-artist {
+		font-style: italic;
+	}
+
+	p.event-times span {
+		margin-right: 8px;
+	}
 	
 }

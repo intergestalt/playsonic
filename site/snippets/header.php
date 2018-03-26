@@ -11,7 +11,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.pjax/2.0.1/jquery.pjax.min.js"></script>
   
-  <?= js('assets/js/image-map.min.js') ?>
   <?= js('assets/js/main.js') ?>
 
   <?= css('assets/plugins/embed/css/embed.css') ?>

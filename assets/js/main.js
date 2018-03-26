@@ -274,8 +274,43 @@ $(document).on('pjax:complete ready', function() {
 
 /* ----- resize image maps ---- */
 
-$(document).ready(function() {
+/*$(document).ready(function() {
   $('img[usemap]').imageMap();
-});
+});*/
 
+/* ----- program filters ------ */
+
+dayFilter = "all";
+categoryFilter = "all";
+applyFilters = function() {
+  $("li.event, p.event-times span").show();
+  console.log("filter to show " + dayFilter + " " + categoryFilter);
+  switch(dayFilter) {
+    case "friday": $("li.event.saturday, span.saturday").hide(); $("li.event.sunday, span.sunday").hide(); $("li.event.friday, span.friday").show(); break;  
+    case "saturday": $("li.event.friday, span.friday").hide(); $("li.event.sunday, span.sunday").hide(); $("li.event.saturday, span.saturday").show(); break;  
+    case "sunday": $("li.event.friday, span.friday").hide(); $("li.event.saturday, span.saturday").hide(); $("li.event.sunday, span.sunday").show(); break;  
+  }
+  switch(categoryFilter) {
+    case "extended": $("li.event.focus").hide(); $("li.event.exhibition").hide(); break;  
+    case "focus": $("li.event.extended").hide(); $("li.event.exhibition").hide(); break;  
+    case "exhibition": $("li.event.extended").hide(); $("li.event.focus").hide(); break;  
+  }
+}
+
+$(document).ready(function() {
+
+  $('.category-select').change(function () {
+    let s = $(".category-select").val();
+    categoryFilter = s;
+    applyFilters();
+  });
+
+  $('.day-select').change(function () {
+    let s = $(".day-select").val();
+    dayFilter = s;
+    applyFilters();
+  });
+
+
+});
 

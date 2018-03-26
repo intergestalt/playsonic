@@ -1,0 +1,56 @@
+title: Event
+
+files: false
+  
+pages: false
+
+fields:
+  title:
+    label: Title
+    type:  text
+
+  artists:
+    label: Artists
+    type:  text
+
+  description:
+    label: Description
+    type:  textarea
+
+  bio:
+    label: Bio
+    type:  textarea
+
+  times_fri:
+    label: Times Friday
+    type:  text
+    translate: false
+
+  times_sat:
+    label: Times Saturday
+    type:  text
+    translate: false
+
+  times_sun:
+    label: Times Sunday
+    type:  text
+    translate: false
+
+  category:
+    label: Category
+    type: select
+    translate: false
+    options:
+      extended: Extended
+      focus: Fokus
+      exhibition: Exhibition
+    
+  focus:
+    label: Focus Team
+    type: select
+    translate: false
+    options:
+      public: Public
+      chamber: Chamber
+      ensemble: Ensemble
+      speaker: Speaker

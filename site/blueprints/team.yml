@@ -22,3 +22,7 @@ fields:
   text:
     label: Text
     type:  textarea
+
+  event_link:
+    label: Link to event
+    type: text
