@@ -307,16 +307,14 @@ setupProgrammSelectEvents = function() {
 
   console.log("setting up program filter events");
 
-  dayFilter = "all";
-  categoryFilter = "all";
-  applyFilters();
-
+  $('.category-select').val(categoryFilter);
   $('.category-select').change(function () {
     var s = $(".category-select").val();
     categoryFilter = s;
     applyFilters();
   });
 
+  $('.day-select').val(dayFilter);
   $('.day-select').change(function () {
     var s = $(".day-select").val();
     dayFilter = s;
