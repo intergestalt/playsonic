@@ -104,7 +104,7 @@ $(function() {
   swapBackground(true);
 });
 
-// fires on every page oad via pjax
+// fires on every page load via pjax
 $(document).on('pjax:complete', function() {  
   
   // todo: check if background needs to be swapped
@@ -253,15 +253,19 @@ $(window).load(function(){
   })  
 })
 
-$(document).on('pjax:complete ready', function() {
+$(document).on('ready pjax:end', function() {
+
+  console.log("setup events");
 
   $('html').click(function(e){
     if(menuOpen && !$(e.target).parent().hasClass("active")) {
+        console.log("close menu");
         closeMenu();  
       }
     });
 
   $(".menu-icon").on('click tap', function(e) {
+    console.log("tap menu");
       e.stopPropagation();
       if(!menuOpen) {
         openMenu();
@@ -269,6 +273,8 @@ $(document).on('pjax:complete ready', function() {
         closeMenu();
       }
     });
+
+  setupProgrammSelectEvents();
 
 });
 
@@ -297,20 +303,26 @@ applyFilters = function() {
   }
 }
 
-$(document).ready(function() {
+setupProgrammSelectEvents = function() {
+
+  console.log("setting up program filter events");
+
+  dayFilter = "all";
+  categoryFilter = "all";
+  applyFilters();
 
   $('.category-select').change(function () {
-    let s = $(".category-select").val();
+    var s = $(".category-select").val();
     categoryFilter = s;
     applyFilters();
   });
 
   $('.day-select').change(function () {
-    let s = $(".day-select").val();
+    var s = $(".day-select").val();
     dayFilter = s;
     applyFilters();
   });
 
 
-});
+}
 
