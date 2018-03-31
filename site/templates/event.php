@@ -20,7 +20,7 @@
       </div>
 
       <?php if($page->category() == "focus") : ?>
-        <a href="<?php echo url('teams/' . $page->focus()); ?>"><?= l::get('more_info') . " " . ucfirst($page->focus()) ?></a>
+        <a href="<?php echo url('teams/' . $page->focus()); ?>"><?= l::get('more_info') . " " . $page->focus() ?></a>
       <?php endif ?>
       
     </article>
