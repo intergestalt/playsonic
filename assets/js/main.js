@@ -306,6 +306,7 @@ applyFilters = function() {
     case "focus": $("li.event.extended").hide(); $("li.event.exhibition").hide(); break;  
     case "exhibition": $("li.event.extended").hide(); $("li.event.focus").hide(); break;  
   }
+  adjustBackgroundHeight();
 }
 updateSelectors = function() {
   $('.category-select span').removeClass("selected");
