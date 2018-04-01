@@ -33,8 +33,11 @@
 	p.event-times span {
 		color: #00DC00;
 		margin-right: 8px;
-		/*font-weight: bold;*/
 		font-family: "pstext-bold";
+	}
+
+	.event-select span[data-value="all"] {
+		font-family: "pstext-bold";		
 	}
 
 	.event-select span:hover {
@@ -43,9 +46,6 @@
 
 	.event-select span.selected {
 		color: #00DC00;
-		/*font-family: "pstext";
-		font-weight: bold;*/
-		font-family: "pstext-bold";
 	}
 
 	.event-select span.selected:hover {
@@ -53,7 +53,7 @@
 	}
 
 	.day-select {
-		margin-bottom: 0.5em;
+		margin-bottom: 0.0em;
 	}
 
 	/* add ears */
