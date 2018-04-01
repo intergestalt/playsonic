@@ -9,6 +9,10 @@
       </header>
       
       <div class="text description">
+        <?= $page->short_description()->kirbytext() ?>
+      </div>
+
+      <div class="text">
         <?= $page->description()->kirbytext() ?>
       </div>
 

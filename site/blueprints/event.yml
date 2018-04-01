@@ -13,8 +13,12 @@ fields:
     label: Artists
     type:  text
 
+  short_description:
+    label: Short Description
+    type:  textarea
+
   description:
-    label: Description
+    label: Extra Description
     type:  textarea
 
   bio:
