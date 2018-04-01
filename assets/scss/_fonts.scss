@@ -22,3 +22,13 @@
     font-style: normal;
 
 }
+
+@font-face {
+    font-family: 'pstext-bold';
+    src: url('/assets/fonts/pstext-semibold-webfont.woff2') format('woff2'),
+         url('/assets/fonts/pstext-semibold-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+

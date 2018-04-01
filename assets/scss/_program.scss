@@ -34,7 +34,7 @@
 		color: #00DC00;
 		margin-right: 8px;
 		/*font-weight: bold;*/
-		font-family: "psbold";
+		font-family: "pstext-bold";
 	}
 
 	.event-select span:hover {
@@ -45,7 +45,7 @@
 		color: #00DC00;
 		/*font-family: "pstext";
 		font-weight: bold;*/
-		font-family: "psbold";
+		font-family: "pstext-bold";
 	}
 
 	.event-select span.selected:hover {
@@ -78,7 +78,7 @@
 	}
 
 	article.event .description {
-		font-family: "psbold";
+		font-family: "pstext-bold";
 	}
 	
 	article.event .event-times span {
