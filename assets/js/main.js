@@ -319,6 +319,7 @@ setupProgrammSelectEvents = function() {
 
   console.log("setting up program filter events");
   updateSelectors();
+  applyFilters();
 
   $('.category-select span').click(function (event) {
     var s = $(event.target).data("value");
