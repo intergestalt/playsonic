@@ -41,20 +41,8 @@
       <?php endforeach ?>
     </ul>
     
-    <ul class="language-select">
-      <?php foreach($site->languages() as $language): ?>
-        <?php if($site->language() == $language) : ?>
-          <li class="active"><span><?php echo html($language->code()) ?></span>
-        <?php else : ?>
-          <li>
-            <a href="<?php echo $page->url($language->code()) ?>">
-              <?php echo html($language->code()) ?>
-            </a>
-          </li>
-        <?php endif ?>
-      <?php endforeach ?>
-    </ul>
-  
   </div>
+
+  <?php snippet('language-select') ?>
 
 </nav>

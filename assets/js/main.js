@@ -255,6 +255,17 @@ $(window).load(function(){
 
 $(document).on('ready pjax:end', function() {
 
+  var pathArray = window.location.pathname.split("/");
+  if(pathArray.length > 2) {
+    if(pathArray[2] == "teams") {
+      $(".main-icon").addClass("bw");
+    } else {
+      $(".main-icon").removeClass("bw");
+    }
+  } else {
+    $(".main-icon").removeClass("bw");
+  }
+  
   console.log("setup events");
 
   $('html').click(function(e){
@@ -277,12 +288,6 @@ $(document).on('ready pjax:end', function() {
   setupProgrammSelectEvents();
 
 });
-
-/* ----- resize image maps ---- */
-
-/*$(document).ready(function() {
-  $('img[usemap]').imageMap();
-});*/
 
 /* ----- program filters ------ */
 

@@ -8,6 +8,6 @@
 <?php echo $member->text()->kirbytext() ?>
 
 <?php if ($member->link()) : ?>
-  <a target="_blank" href="<?= $member->link();?>"><?= $member->link() ?></a>
+  <a target="_blank" href="<?= $member->link();?>"><?= l::get('website'); ?></a>
 <?php endif; ?>
 

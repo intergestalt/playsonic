@@ -6,6 +6,19 @@
 	width:100%;
 }
 
+.menu-container {
+	min-height: 16vw;
+}
+
+a {
+	text-decoration: none;
+	color: #000;
+}
+
+a:visited {
+	color: #000;
+}
+
 .main-icon, .menu-icon {
 	width: $icon_dimension;
 	height: $icon_dimension;
@@ -15,7 +28,7 @@
 	user-select: none;
 }
 
-.main-icon svg path {
+.main-icon.bw svg path {
 	fill: #000 !important;
 }
 
@@ -152,7 +165,50 @@ ul.team-menu li a, ul.team-menu li span {
 	text-transform: lowercase;
 }
 
-.language-select li {
-	display: inline;
-	margin-right: 10px;
+.language-select {
+	margin-top: 7vw;
+	width: 10vw;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	text-transform: uppercase;
 }
+
+
+.language-select span:last-child {
+	float: left;
+}
+
+.language-select span:first-child {
+	float: right;
+}
+
+
+.language-select span.active {
+	font-family: "psbold";
+	position: relative;
+	top: -2px; 
+}
+
+.language-select span a {
+	text-decoration: none;
+	font-family: "pstext";	
+}
+
+@media screen and (max-width: $breakpoint) {
+	.language-select {
+		margin-top: 7.5vw;
+		width: 39vw;
+		font-size: 70%;
+	}
+
+	.language-select span.active {
+		top: -1px; 
+	}
+
+	.menu-icon span {
+		display: none;
+	}
+}
+
+

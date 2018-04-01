@@ -2,27 +2,28 @@
 
   <main class="main" role="main">
     
-    <article class="article single wrap">
+    <article class="article single wrap event">
 
       <header class="article-header">
-        <?php snippet('event-times', ['event' => $page]) ?>
-        <p class="event-artist"><?= $page->artists()->html() ?></p>
-        <h2><?= $page->title()->html() ?></h2>
-        
+        <h2><?= $page->title()->html() ?></h2>        
       </header>
       
-      <div class="text">
+      <div class="text description">
         <?= $page->description()->kirbytext() ?>
       </div>
 
-      <div class="text">
+      <?php snippet('event-times', ['event' => $page]) ?>
+
+      <div class="text bio">
         <?= $page->bio()->kirbytext() ?>
       </div>
 
       <?php if($page->category() == "focus") : ?>
         <a href="<?php echo url('teams/' . $page->focus()); ?>"><?= l::get('more_info') . " " . $page->focus() ?></a>
       <?php endif ?>
-      
+
+      <p><a href="javascript:history.back()"><?= l::get("back_to_program") ?></a></p>
+    
     </article>
     
   </main>

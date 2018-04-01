@@ -1,26 +1,102 @@
 #main {
 
-	.event-select span.selected {
-		color: red;
+	ul.event-list {
+		list-style: none;
+		padding-left: 0px;
 	}
-	
-	ul.event-list p {
-		margin-top: 0.5em;
-		margin-bottom: 0.5em;
+
+	ul.event-list li {
+		margin-bottom: 1em;
 	}
 
 	p.event-times, p.event-artist {
-		line-height: 1.3em;
-		font-size: 0.75em;
-		margin-top: 0.5em;
+		font-size: 13px;
+		line-height: 24px;
+		margin: 0px;
+	}
+
+	a.event-title {
+		background-image: none;
+		padding: 0px;
+		text-decoration: none;
+		color: #000;
+	}
+
+	a.event-title h1 {
+		margin: 0px;
 	}
 
 	p.event-artist {
-		font-style: italic;
+		line-height: 18px;
 	}
 
 	p.event-times span {
+		color: #00DC00;
 		margin-right: 8px;
+		/*font-weight: bold;*/
+		font-family: "psbold";
+	}
+
+	.event-select span:hover {
+		cursor: pointer;
+	}
+
+	.event-select span.selected {
+		color: #00DC00;
+		/*font-family: "pstext";
+		font-weight: bold;*/
+		font-family: "psbold";
+	}
+
+	.event-select span.selected:hover {
+		cursor: default;	
+	}
+
+	.day-select {
+		margin-bottom: 0.5em;
+	}
+
+	/* add ears */
+	.event-select span {
+		padding-left: 14px;
+		padding-right: 14px;
+		background-image: url('/assets/images/left_ear_b.svg'), url('/assets/images/right_ear_b.svg');
+		background-position: left top, right top;
+		background-repeat: no-repeat, no-repeat;
+	}
+
+	.event-select span.selected {
+		background-image: url('/assets/images/left_ear_c1.svg'), url('/assets/images/right_ear_c1.svg');
+	}
+
+	p.event-times span {
+		padding-left: 10px;
+		padding-right: 10px;
+		background-image: url('/assets/images/left_ear_c1.svg'), url('/assets/images/right_ear_c1.svg');
+		background-position: left top, right top;
+		background-repeat: no-repeat, no-repeat;
+	}
+
+	article.event .description {
+		font-family: "psbold";
 	}
 	
+	article.event .event-times span {
+		font-family: "pstext";
+		font-weight: normal;
+		background-image: none;
+		padding: 0px;
+		color: #000;
+		font-size: 1rem;	
+	}
+
+	article.event .event-times span::before {
+		content: "(\00a0";
+	}
+
+	article.event .event-times span::after {
+		content: "\00a0)\A";
+		white-space: pre;
+	}
+
 }

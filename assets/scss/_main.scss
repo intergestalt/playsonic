@@ -16,7 +16,18 @@
 	}
 
 	a {
-		color: #666;
+		font-family: "psbold";
+		color: #000;
+		text-decoration: none;
+		padding-left: 14px;
+		padding-right: 14px;
+		background-image: url('/assets/images/left_ear_b.svg'), url('/assets/images/right_ear_b.svg');
+		background-position: left center, right center;
+		background-repeat: no-repeat, no-repeat;
+	}
+
+	a:visited {
+		color: #000;
 	}
 
 	.member-image {
@@ -64,6 +75,8 @@
 	}
 
 	.partner-logo-container a {
+		background-image: none;
+		padding: 0px;
 		position: absolute;
 		height: 50%;
 		width: 50%;
@@ -77,10 +90,9 @@
 	}
 
 	.legal a {
-		padding-right: 4px;
+		padding-left: 10px;
+		padding-right: 10px;
 	}
-
-
 
 	article img {
 		width: 100%;
@@ -107,34 +119,6 @@
 	a.pagination-item {
 		font-size: 0.8em;
 		text-decoration: none;
-	}
-
-	ul.event-list {
-		list-style: none;
-		padding-left: 0px;
-	}
-
-	ul.event-list li {
-		margin-bottom: 1em;
-	}
-
-	ul.event-list p {
-		margin-top: 0.5em;
-		margin-bottom: 0.5em;
-	}
-
-	p.event-times, p.event-artist {
-		line-height: 1.3em;
-		font-size: 0.75em;
-		margin-top: 0.5em;
-	}
-
-	p.event-artist {
-		font-style: italic;
-	}
-
-	p.event-times span {
-		margin-right: 8px;
 	}
 	
 }

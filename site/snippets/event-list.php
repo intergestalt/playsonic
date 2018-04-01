@@ -1,15 +1,15 @@
 
 <div class="event-select day-select">
-	<span data-value="all" class="selected"><?= l::get('all_days') ?></span>
+	<span data-value="all" class="selected"><?= l::get('all_days') ?></span><br>
 	<span data-value="friday"><?= l::get('friday') ?></span>
 	<span data-value="saturday"><?= l::get('saturday') ?></span>
 	<span data-value="sunday"><?= l::get('sunday') ?></span>
 </div>
 
 <div class="event-select category-select">
-	<span data-value="all" class="selected"><?= l::get('all_categories') ?></span>
-	<span data-value="extended"><?= l::get('extended') ?></span>
-	<span data-value="focus"><?= l::get('focus') ?></span>
+	<span data-value="all" class="selected"><?= l::get('all_categories') ?></span><br>
+	<span data-value="extended"><?= l::get('extended') ?></span><br>
+	<span data-value="focus"><?= l::get('focus') ?></span><br>
 	<span data-value="exhibition"><?= l::get('exhibition') ?></span>
 </div>
 
@@ -22,7 +22,7 @@
 		
 		<?php snippet('event-times', ['event' => $event]) ?>
 		<p class="event-artist"><?= $event->artists()->html() ?></p>        
-		<a href="<?= $event->url() ?>"><h3 class="event-title"><?= $event->title()->html() ?></h3></a>
+		<a class="event-title" href="<?= $event->url() ?>"><h1 class="event-title"><?= $event->title()->html() ?></h1></a>
 
     </li>
 

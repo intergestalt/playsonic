@@ -23,9 +23,7 @@
           <article class="article index">
 
             <header class="article-header">
-              <h2 class="article-title">
-                <a href="<?= $article->url() ?>"><?= $article->title()->html() ?></a>
-              </h2>
+              <h2 class="article-title"><?= $article->title()->html() ?></h2>
 
               
               <?php snippet('article-meta', $article) ?>

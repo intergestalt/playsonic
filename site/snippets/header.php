@@ -13,7 +13,7 @@
   
   <?= js('assets/js/main.js') ?>
 
-  <?= css('assets/plugins/embed/css/embed.css') ?>
+  <?= css('assets/plugins/embed/css/embed.css') ?> <!-- note that this doesn't work on localhost with php -S -->
   <?php snippet('scss') ?>  
 
 
