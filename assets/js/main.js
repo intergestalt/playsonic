@@ -285,8 +285,12 @@ $(document).on('ready pjax:end', function() {
       }
     });
 
-  setupProgrammSelectEvents();
-
+  if(pathArray.length == 3) {
+    if(pathArray[2] == "programm") {
+      setupProgrammSelectEvents();    
+    }
+  }
+  
 });
 
 /* ----- program filters ------ */
