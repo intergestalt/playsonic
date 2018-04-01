@@ -1,17 +1,17 @@
 
-<select class="event-select day-select">
-	<option value="all"><?= l::get('all_days') ?></option>
-	<option value="friday"><?= l::get('friday') ?></option>
-	<option value="saturday"><?= l::get('saturday') ?></option>
-	<option value="sunday"><?= l::get('sunday') ?></option>
-</select>
+<div class="event-select day-select">
+	<span data-value="all" class="selected"><?= l::get('all_days') ?></span>
+	<span data-value="friday"><?= l::get('friday') ?></span>
+	<span data-value="saturday"><?= l::get('saturday') ?></span>
+	<span data-value="sunday"><?= l::get('sunday') ?></span>
+</div>
 
-<select class="event-select category-select">
-	<option value="all"><?= l::get('all_categories') ?></option>
-	<option value="extended"><?= l::get('extended') ?></option>
-	<option value="focus"><?= l::get('focus') ?></option>
-	<option value="exhibition"><?= l::get('exhibition') ?></option>
-</select>
+<div class="event-select category-select">
+	<span data-value="all" class="selected"><?= l::get('all_categories') ?></span>
+	<span data-value="extended"><?= l::get('extended') ?></span>
+	<span data-value="focus"><?= l::get('focus') ?></span>
+	<span data-value="exhibition"><?= l::get('exhibition') ?></span>
+</div>
 
 
 <ul class="event-list">

@@ -302,25 +302,32 @@ applyFilters = function() {
     case "exhibition": $("li.event.extended").hide(); $("li.event.focus").hide(); break;  
   }
 }
+updateSelectors = function() {
+  $('.category-select span').removeClass("selected");
+  $('.category-select span[data-value="'+categoryFilter +'"]').addClass("selected");
+  $('.day-select span').removeClass("selected");
+  $('.day-select span[data-value="'+dayFilter +'"]').addClass("selected");
+}
 
 setupProgrammSelectEvents = function() {
 
   console.log("setting up program filter events");
+  updateSelectors();
 
-  $('.category-select').val(categoryFilter);
-  $('.category-select').change(function () {
-    var s = $(".category-select").val();
+  $('.category-select span').click(function (event) {
+    var s = $(event.target).data("value");
     categoryFilter = s;
+    updateSelectors();
     applyFilters();
   });
 
-  $('.day-select').val(dayFilter);
-  $('.day-select').change(function () {
-    var s = $(".day-select").val();
+
+  $('.day-select').click(function (event) {
+    var s = $(event.target).data("value");
     dayFilter = s;
+    updateSelectors();
     applyFilters();
   });
-
 
 }
 
