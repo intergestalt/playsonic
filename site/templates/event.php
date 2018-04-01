@@ -26,7 +26,7 @@
         <a href="<?php echo url('teams/' . $page->focus()); ?>"><?= l::get('more_info') . " " . $page->focus() ?></a>
       <?php endif ?>
 
-      <p><a href="javascript:history.back()"><?= l::get("back_to_program") ?></a></p>
+      <p><a href="<?= $page->parent()->url() ?>"><?= l::get("back_to_program") ?></a></p>
     
     </article>
     
