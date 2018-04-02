@@ -7,7 +7,7 @@ l::set('back_to_all_teams', 'alle Fokus-Teams in der Übersicht');
 l::set('next_entry', 'nächster Blog-Eintrag');
 l::set('prev_entry', 'vorheriger Blog-Eintrag');
 l::set('more_info', 'Fokus-Team');
-l::set('to_event_in_program', 'alle Informationen zum entstandenen Werk im Festival-Programm');
+l::set('to_event_in_program', 'zur Arbeit im Festival-Programm');
 l::set('friday', 'Freitag');
 l::set('saturday', 'Samstag');
 l::set('sunday', 'Sonntag');

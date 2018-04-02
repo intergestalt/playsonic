@@ -7,7 +7,7 @@ l::set('back_to_all_teams', 'back to overview of all focus teams');
 l::set('next_entry', 'next blog entry');
 l::set('prev_entry', 'previous blog entry');
 l::set('more_info', 'focus team');
-l::set('to_event_in_program', '> see details of the realized work in the festival program');
+l::set('to_event_in_program', 'the work in the festival program');
 l::set('friday', 'Friday');
 l::set('saturday', 'Saturday');
 l::set('sunday', 'Sunday');
