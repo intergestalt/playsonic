@@ -11,7 +11,7 @@
     
     <ul class="main-menu">
       <?php foreach($pages->visible() as $item): ?>
-        <?php if($item->id() != "impressum" && $item->id() != "datenschutz" && $item->id() != "game-jam" && $item->id() != "programm" && $item->id() != "volunteers") : ?>
+        <?php if($item->id() != "impressum" && $item->id() != "datenschutz" && $item->id() != "game-jam")  : ?>
           <li class="menu-item<?= r($item->isOpen(), ' active') ?>">
             
             <?php if(!$item->isOpen() || ($item->id() == "teams") && $site->activePage()->id() != "teams") : ?>

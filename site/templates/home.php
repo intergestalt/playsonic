@@ -7,6 +7,7 @@
   <div class="legal">
   	<a href="/<?= $site->language()?>/impressum"><?= $site->page('impressum') ? $site->page('impressum')->title() : "" ?></a>
   	<a href="/<?= $site->language()?>/datenschutz"><?= $site->page('datenschutz') ? $site->page('datenschutz')->title() : "" ?></a>
+  	<a href="https://www.facebook.com/playsonicfestival" target="_blank">Facebook</a>
   </div>
 	
   
