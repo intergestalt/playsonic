@@ -1,6 +1,6 @@
 title: Program
 
-files: false
+files: true
 
 pages:
   template: Event
